@@ -1,0 +1,156 @@
+{
+  "checksum": "922e8eb356fd1c4ed998fe072d2512e3",
+  "roots": {
+    "bookmark_bar": {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "date_added": "13332231270000000",
+                  "date_last_used": "0",
+                  "guid": "b9e0a341-3e2c-413f-8fd1-8576046e7a0b",
+                  "id": "2146",
+                  "name": "国家企业信用信息公示系统-全国",
+                  "type": "url",
+                  "url": "http://www.gsxt.gov.cn/index.html"
+                },
+                {
+                  "date_added": "13332231270000000",
+                  "date_last_used": "0",
+                  "guid": "da30cd97-2dad-4f62-95e4-4f9ccf1bdd51",
+                  "id": "2145",
+                  "name": "郑州市人民政府",
+                  "type": "url",
+                  "url": "http://www.zhengzhou.gov.cn/"
+                }
+              ],
+              "date_added": "13351418461817789",
+              "date_last_used": "0",
+              "date_modified": "13351418461817789",
+              "guid": "36213516-a159-4dad-aad7-e65f1825028d",
+              "id": "2138",
+              "name": "0A中国",
+              "type": "folder"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "date_added": "13342863370000000",
+                          "date_last_used": "0",
+                          "guid": "75520adf-707d-4945-99cf-7a1179914e80",
+                          "id": "2195",
+                          "name": "2023Idea",
+                          "type": "url",
+                          "url": "https://www.baidu.com/s?wd=2023Idea"
+                        },
+                        {
+                          "date_added": "13346333425000000",
+                          "date_last_used": "0",
+                          "guid": "3ddf7720-a5a8-4eae-8752-c0ae3bc41f56",
+                          "id": "2196",
+                          "name": "baidu",
+                          "type": "url",
+                          "url": "https://www.baidu.com/s?wd=2023Idea"
+                        }
+                      ],
+                      "date_added": "13351418461820847",
+                      "date_last_used": "0",
+                      "date_modified": "13351418461820847",
+                      "guid": "e19e596d-bf04-4fd5-b619-c46cc3184786",
+                      "id": "2194",
+                      "name": "idea",
+                      "type": "folder"
+                    },
+                    {
+                      "date_added": "13332231270000000",
+                      "date_last_used": "0",
+                      "guid": "af2d913a-ad78-49c3-9413-b28cbebc6599",
+                      "id": "2199",
+                      "name": "飘云阁",
+                      "type": "url",
+                      "url": "https://www.chinapyg.com/"
+                    }
+                  ],
+                  "date_added": "13351418461820748",
+                  "date_last_used": "0",
+                  "date_modified": "13351418461820748",
+                  "guid": "0bd14809-b52b-4909-bec1-cb617c963f10",
+                  "id": "2193",
+                  "name": "collect",
+                  "type": "folder"
+                },
+                {
+                  "date_added": "13332231270000000",
+                  "date_last_used": "0",
+                  "guid": "c405cff2-61fe-4218-8230-6a6cc0d5f996",
+                  "id": "2166",
+                  "name": "RedSpider社区",
+                  "type": "url",
+                  "url": "http://concurrent.redspider.group/RedSpider.html"
+                }
+              ],
+              "date_added": "13351418461820647",
+              "date_last_used": "0",
+              "date_modified": "13354362276667247",
+              "guid": "5de4cc7a-6cad-4dc0-8aee-21eb20837363",
+              "id": "2149",
+              "name": "blog",
+              "type": "folder"
+            }
+          ],
+          "date_added": "13351418461817122",
+          "date_last_used": "0",
+          "date_modified": "13351418461817122",
+          "guid": "21be0e7c-b1a2-42d8-a73b-3aa117970656",
+          "id": "2101",
+          "name": "acollect",
+          "type": "folder"
+        },
+        {
+          "date_added": "13345281170000000",
+          "date_last_used": "0",
+          "guid": "21c3c970-4efc-4d90-91b4-5dbaf1f9d044",
+          "id": "1853",
+          "name": "G",
+          "type": "url",
+          "url": "https://www.google.com/"
+        }
+      ],
+      "date_added": "13351065065724236",
+      "date_last_used": "0",
+      "date_modified": "13345281170000000",
+      "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+      "id": "1",
+      "name": "书签栏",
+      "type": "folder"
+    },
+    "other": {
+      "children": [],
+      "date_added": "13351065065724238",
+      "date_last_used": "0",
+      "date_modified": "13352788079564123",
+      "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+      "id": "2",
+      "name": "其他书签",
+      "type": "folder"
+    },
+    "synced": {
+      "children": [],
+      "date_added": "13351065065724238",
+      "date_last_used": "0",
+      "date_modified": "0",
+      "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+      "id": "3",
+      "name": "移动设备书签",
+      "type": "folder"
+    }
+  },
+  "sync_metadata": "sync_meta_data",
+  "version": 1
+}

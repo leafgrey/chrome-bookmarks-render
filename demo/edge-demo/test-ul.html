@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  ul.custom-list-style-type {
+    list-style-type: square; /* 使项目符号变成方块 */
+  }
+
+  ul.custom-list-style-type li {
+
+  }
+  ul.custom-list-style-image {
+    list-style-image: url('../../public/favicon.ico'); /* 项目符号使用自定义图片 */
+  }
+
+  ul.custom-list-style-image li {
+    /* 其他样式 */
+  }
+  ul.custom-list-style {
+    list-style: none; /* 去除默认的项目符号 */
+    padding: 0; /* 可选：去掉默认的内边距 */
+    margin: 0; /* 可选：去掉默认的外边距 */
+  }
+
+  ul.custom-list-style li::before {
+    content: '➤'; /* 使用自定义的字符或实体 */
+    padding-right: 20px; /* 可选：在项目符号和文本之间添加一些空间 */
+    /* 可以添加其他样式，比如颜色、字体等 */
+  }
+</style>
+<body>
+<ul class="custom-list-style-type">
+  <li>项目1</li>
+  <li>项目2</li>
+  <!-- 其他 <li> 元素 -->
+</ul>
+
+<ul class="custom-list-style-image">
+  <li>项目1</li>
+  <li>项目2</li>
+  <!-- 其他 <li> 元素 -->
+</ul>
+
+<ul class="custom-list-style">
+  <li>项目1</li>
+  <li>项目2</li>
+  <!-- 其他 <li> 元素 -->
+</ul>
+</body>
+</html>

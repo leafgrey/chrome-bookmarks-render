@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Bookmarks</title>
+  <style>
+    textarea {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+<textarea id="json-editor"></textarea>
+<button id="save-button">Save</button>
+
+<script>
+  const editor = document.getElementById('json-editor');
+  const saveButton = document.getElementById('save-button');
+
+  // Load bookmarks data for editing
+  fetch('http://localhost:3000/bookmarks')
+    .then(response => response.json())
+    .then(data => {
+      editor.value = JSON.stringify(data, null, 2);
+    });
+
+  // Handle save button click
+  saveButton.addEventListener('click', () => {
+    const updatedData = JSON.parse(editor.value);
+    fetch('http://localhost:3000/bookmarks', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedData)
+    })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
+</body>
+</html>

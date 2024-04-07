@@ -1,0 +1,124 @@
+// 存储父级目录的历史，每一项是一个代表书签节点的数组
+let parentStack = [];
+// Create a flag to track when we're adding the last folder
+let lastFolder = false;
+// 应当确保每一个书签（包括根节点）都有一个指向其父级的引用
+// function createBookmarkElements(bookmarks, parentId, parentBookmark = null) {
+//   const parent = document.getElementById(parentId);
+//   // 清空父容器再添加新元素
+//   parent.innerHTML = '';
+//   // 如果提供了父级书签，则将其推入栈中
+//   if (parentBookmark) {
+//     parentStack.push(parentBookmark);
+//   }
+//   bookmarks.forEach((bookmark, index) => {
+//     lastFolder = bookmark.type === 'folder' && (index === bookmarks.length - 1 || bookmarks[index + 1].type === 'url');
+//     if (bookmark.type === 'folder') {
+//       // 创建文件夹并添加点击事件监听器
+//       const div = document.createElement('div');
+//       div.className = 'folder';
+//       div.textContent = bookmark.name;
+//       div.id = bookmark.guid;
+//       div.addEventListener('click', () => {
+//         createBookmarkElements(bookmark.children, parentId, bookmark);
+//       });
+//       parent.appendChild(div);
+//       // 检查是否是同级中的最后一个文件夹 (index === bookmarks.length - 1 || bookmarks[index + 1].type !== 'folder') {
+//
+//       if (lastFolder) {
+//         console.info('last folder:', bookmark);
+//         // 在最后一个文件夹元素后添加换行
+//         const br = document.createElement('br');
+//         parent.appendChild(br);
+//       }
+//     }
+//     else if (bookmark.type === 'url') {
+//       // 创建书签链接
+//       const a = document.createElement('a');
+//       a.href = bookmark.url;
+//       a.textContent = bookmark.name;
+//       a.className = 'link';
+//       a.id = bookmark.guid;
+//       a.target = '_blank';
+//       parent.appendChild(a);
+//     }
+//   });
+// }
+function createBookmarkElements(bookmarks, parentId, parentBookmark = null) {
+  const parent = document.getElementById(parentId);
+  parent.innerHTML = ''; // Clear the parent container
+  if (parentBookmark) {
+    parentStack.push(parentBookmark);
+  }
+
+  let group = document.createElement('div');
+  group.className = 'group';
+  // 为每一组书签创建一个新的group div
+  bookmarks.forEach((bookmark, index) => {
+    if (bookmark.type === 'folder') {
+      const div = document.createElement('div');
+      div.className = 'folder';
+      div.textContent = bookmark.name;
+      div.id = bookmark.guid;
+      div.addEventListener('click', () => {
+        createBookmarkElements(bookmark.children, parentId, bookmark);
+      });
+      group.appendChild(div);
+    }
+    else if (bookmark.type === 'url') {
+      const a = document.createElement('a');
+      a.href = bookmark.url;
+      a.textContent = bookmark.name;
+      a.className = 'link';
+      a.id = bookmark.guid;
+      a.target = '_blank';
+      group.appendChild(a);
+    }
+
+    // 当遇到最后一个folder或者当前folder后面紧跟的是一个url类型的书签时
+    // 结束当前group的填充，并将group添加到container中，然后开始一个新组
+    const isLastFolderInGroup = bookmark.type === 'folder' && (index === bookmarks.length - 1 || bookmarks[index + 1].type === 'url');
+    if (isLastFolderInGroup || bookmark.type === 'url') {
+      parent.appendChild(group);
+      group = document.createElement('div');
+      group.className = 'group';
+    }
+  });
+}
+function goBack(parentId) {
+  // 必须确保有超过一个历史记录，这样我们才能后退
+  if (parentStack.length > 1) {
+    // 最后一项是当前目录，所以弹出
+    parentStack.pop();
+    // 获取上一个父级书签的子项以显示
+    const parentBookmark = parentStack[parentStack.length - 1];
+    createBookmarkElements(parentBookmark.children, parentId, null);
+  }
+  else {
+    // 如果我们在根目录，可以选择显示提示信息或者省略此处
+    console.log("已经是根目录");
+  }
+}
+
+function init() {
+  fetch('./data/json/Bookmarks.json').then(response => response.json()).then(data => {
+    // 初始时，不传递父级书签对象给
+    createBookmarkElements(data.roots.bookmark_bar.children, 'container', data.roots.bookmark_bar);
+  });
+}
+
+// 页面加载完成后的处理
+document.addEventListener('DOMContentLoaded', function () {
+  init();
+  // 绑定返回上级的点击事件
+  const goBackBtn = document.getElementById('go-back');
+  goBackBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    goBack('container');
+  });
+  const goRootBtn = document.getElementById('go-root');
+  goRootBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    init();
+  });
+});

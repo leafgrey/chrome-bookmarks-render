@@ -1,0 +1,80 @@
+.folder {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  border-radius: 5px;
+  max-width: 80%;
+  min-width: 40%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.link {
+  margin: 0 10px;
+}
+
+.link_nav {
+  margin: 0 10px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 5px auto;
+  align-items: center;
+  justify-content: center;
+  -webkit-align-content: center;
+}
+
+/*!* 增强链接样式以提高可见性和易点击性 *!*/
+/*.link {*/
+/*  !* 使链接占满整个容器宽度 *!*/
+/*  display: block;*/
+/*  !* 背景颜色 *!*/
+/*  background-color: #f0f0f0;*/
+/*  !* 内边距 *!*/
+/*  padding: 10px;*/
+/*  !* 外边距，仅上下 *!*/
+/*  margin: 10px 0;*/
+/*  !* 边框 *!*/
+/*  border: 1px solid #ccc;*/
+/*  !* 圆角边框 *!*/
+/*  border-radius: 5px;*/
+/*  !* 去除下划线 *!*/
+/*  text-decoration: none;*/
+/*  !* 文字颜色 *!*/
+/*  color: #333;*/
+/*  !* 加粗文字 *!*/
+/*  font-weight: bold;*/
+/*  !* 文字居中 *!*/
+/*  text-align: center;*/
+/*  !* 添加背景颜色变化的过渡效果 *!*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
+
+/*!* 鼠标悬停时的样式 *!*/
+/*.link:hover {*/
+/*  !* 鼠标悬停时的背景颜色 *!*/
+/*  background-color: #e8e8e8;*/
+/*  !* 保持无下划线 *!*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*!* 链接被点击（激活）时的样式 *!*/
+/*.link:active {*/
+/*  !* 链接被点击时的背景颜色 *!*/
+/*  background-color: #d0d0d0;*/
+/*}*/
